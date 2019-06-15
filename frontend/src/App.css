@@ -1,33 +1,98 @@
+
+@import url('https://fonts.googleapis.com/css?family=Fresca&display=swap');
+
+body, button{
+  font-family: 'fresca', sans-serif;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
+.Homepage-logo {
+ /* animation: App-logo-spin infinite 20s linear;*/
   height: 40vmin;
   pointer-events: none;
 }
 
-.App-header {
-  background-color: #282c34;
+.Homepage {
+  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Homepage .container {
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
+
+.Homepage .container .left img {
+  width: 100%;
+  max-width: 300px;
+}
+
+.Homepage .container .right {
+  width: 100%;
+  max-width: 200px;
+  text-align: left;
+  padding-left: 50px;
+}
+
+
+.Homepage .container .right button {
+  padding: 20px;
+  background-color: green;
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: white;
+  border-color: transparent;
+
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+
+.AddActivity {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 0 auto; /* should center everything  */
+}
+.AddActivity button {
+  padding: 20px;
+  background-color: green;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: white;
+  border-color: transparent;
+}
+
+ /* puts everything in a horiziontal line? */
+  /* use flexbox, on FC website */
+  
+.AddActivity textarea {
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+}
+
+.AddActivity button, 
+.AddActivity textarea, 
+.AddActivity input, 
+.AddActivity h2 {
+  display: block;
+}
+
+
+
+

@@ -1,18 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Homepage from './components/Homepage';
+import AddActivity from './components/AddActivity';
 
-function App() {
+//could be props, but if it's {setScreen} you don't have to keep saying props.setScreen.. 
+
+const App = () => {
+  const {screen, setScreen} = useState('addActivity')
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          hello world  
-        </p>
-      </header>
+      { screen === 'homepage' && <Homepage setScreen = {setScreen}  />}
+      
+      { screen === 'addActivity' && <AddActivity />}
     </div>
   );
 }
 
 export default App;
+
