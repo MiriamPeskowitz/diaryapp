@@ -8,7 +8,7 @@ const ActivitiesList = ({activities}) => {
   return (
     <div className="ActivitiesList">
       <ul className= "List">    
-          {activities.map({activity, index} => {
+          {activities.map((activity, index) => {
             return <li key={index}>{activity.title} </li>
               
           })}

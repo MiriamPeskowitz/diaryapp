@@ -2,10 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Homepage from './components/Homepage';
 import AddActivity from './components/AddActivity';
+import Activities from './components/ActivitiesList';
 import { openDB } from 'idb';
-import Activities from './components/Activities';
-const activities = []
-//initialize it before indexeddb
 
 const initDatabase = async() => {
   const dbName = 'diary.lol'
@@ -13,7 +11,7 @@ const initDatabase = async() => {
 
   const db = await openDB(dbName, version, {
      upgrade(db, oldVersion, newVersion, transaction) {
-       db.createObjectStore(storeName, {
+       db.createObjectStore('activities', {
       autoIncrement: true }) 
     }
   })
@@ -41,27 +39,25 @@ const storeActivity = async(activity) => {
 
 const App = () => {
   const {screen, setScreen} = useState('addActivity')
-  const {activities, setActivities} = useState([]])
+  const {activities, setActivities} = useState([])
 
   useEffect(() => {
     (async () => {
       const activities = await initActivities()
         setActivities(activities)
     })()
-    //IIEF immediately invoked 
+    //IIFE immediately invoked 
   }) 
-  
-  const activities = initActivities()
 
 
   return (
     <div className="App">
-    "Hello world"
+
       { screen === 'homepage' && <Homepage setScreen = {setScreen}  />}
       
       { screen === 'addActivity' && <AddActivity storeActivity= {storeActivity} />}
 
-      { scree === 'activities' && <Activities activities={activities} />}
+      { screen === 'activities' && <Activities activities={activities} />}
     </div>
   );
 }
