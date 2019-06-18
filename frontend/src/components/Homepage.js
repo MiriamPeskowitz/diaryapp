@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import logo from '../img/logo.svg';
-import screenshot from '../img/screenshot.png';
+// import screenshot from '../img/screenshot.png';
 import AddActivity from './AddActivity';
 
 const Homepage = ({ setScreen }) => {
   const AddActivity = () => {
-  setScreen('addActivity')
-}
+  setScreen('AddActivity')
+  }
+  
   return (
     <header className="Homepage">
       <img 
@@ -14,7 +15,7 @@ const Homepage = ({ setScreen }) => {
         className="Homepage-logo"
         alt="logo" />
       <div className="container">
-        <div className="Left" className="screenshot" alt="screenshot" > 
+        <div className="Left" alt="screenshot" > 
         </div>
 
          <div className="Right"> 
